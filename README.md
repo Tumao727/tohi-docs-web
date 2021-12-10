@@ -1,2 +1,4 @@
 # tohi-docs-web
-tohi docs site
+
+This repo contains Towhee docs website configuration and documentation.
+
