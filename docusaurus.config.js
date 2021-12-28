@@ -1,32 +1,39 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Towhee docs',
-  tagline: 'Towhee are cool',
-  url: 'https://tohi-docs.netlify.app/',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'Towhee', // Usually your GitHub org/user name.
-  projectName: 'Towhee-docs', // Usually your repo name.
+  title: "Towhee Docs",
+  tagline: "",
+  url: "https://docs.towhee.io",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "Towhee", // Usually your GitHub org/user name.
+  projectName: "towhee-docs", // Usually your repo name.
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/Tumao727/tohi-docs-web',
+          path: "docs",
+          sidebarPath: require.resolve("./sidebars.js"),
+          // Please change this to your repo.
+          editUrl: "https://github.com/towhee-io/towhee-docs/blob/main",
+          routeBasePath: "/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: "G-0JXY6PQLWQ",
+          anonymizeIP: true,
         },
       }),
     ],
@@ -36,74 +43,86 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Towhee docs',
+        title: "",
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: "Towhee logo",
+          src: "img/logo.png",
+          href: "https://towhee.io/",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            href: "https://towhee.io/pipelines",
+            label: 'Pipelines',
+            position: "right",
+            className: "header-link"
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+            href: "https://towhee.io/operators",
+            label: "Operators",
+            position: "right",
+            className: "header-link"
+          }, {
+            href: "/",
+            label: "Documentation",
+            position: "right",
+            className: "header-link"
+          }, {
+            href: "https://towhee.io/user/login",
+            label: "Sign in",
+            className: "header-outline-button",
+            position: "right"
+          }
+          // {
+          //   href: "https://github.com/towhee-io/towhee",
+          //   label: "GitHub",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "Quick Start",
+                to: "/get-started/quick-start",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: "Slack",
+                href: "https://slack.towhee.io",
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: "Twitter",
+                href: "https://twitter.com/towheeio",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "GitHub",
+                href: "https://github.com/towhee-io/towhee",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Towhee, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Towhee. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      // hide dark mode
+      colorMode: {
+        disableSwitch: true,
       },
     }),
 };

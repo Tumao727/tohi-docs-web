@@ -1,2 +1,0 @@
-# tohi-docs
-tohi docs
