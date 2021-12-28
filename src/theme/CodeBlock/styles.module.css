@@ -69,3 +69,7 @@
     white-space: pre-wrap;
   }
 }
+
+code * {
+  pointer-events: none;
+}
