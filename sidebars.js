@@ -28,16 +28,16 @@ const sidebars = {
       ],
     },
     {
-      Solutions: [
-        'solutions/image-deduplication',
-        'solutions/music-recognition-system',
-        'solutions/reverse-image-search',
+      Tutorials: [
+        'tutorials/image-deduplication',
+        'tutorials/music-recognition-system',
+        'tutorials/reverse-image-search',
       ],
     },
     {
       'Supported pipelines': [
         'pipelines/image-embedding',
-        'pipelines/music-embedding',
+        'pipelines/audio-embedding',
       ],
     },
     /*{
@@ -47,16 +47,22 @@ const sidebars = {
       ],
     },*/
     {
-      Advanced: [
-        'advanced/contributing-guide',
-        'advanced/architectural-overview',
-        'advanced/DAG-details',
-        'advanced/engine-details',
-        'advanced/layer-details',
-        'advanced/hub-integration-and-caching',
-        'advanced/image-ensemble-training',
-        //'advanced/roadmap',
+      'Developer guides': [
+        {
+          Contributing: ['developer-guides/contributing/contributing-guide'],
+        },
+        {
+          Framework: [
+            'developer-guides/framework/architectural-overview',
+            'developer-guides/framework/DAG-details',
+            'developer-guides/framework/engine-details',
+            'developer-guides/framework/layer-details',
+            'developer-guides/framework/hub-integration-and-caching',
+            'developer-guides/framework/image-ensemble-training',
+          ],
+        },
       ],
+      //'advanced/roadmap',
     },
   ],
 };

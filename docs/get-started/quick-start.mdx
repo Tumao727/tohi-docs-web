@@ -16,11 +16,11 @@ Clicking on any of the code snippets below will automatically paste the contents
 
 ### Install Towhee
 
-The browser-based terminal you just brought up is a completely clean environment, so we'll need to install Towhee first: (click the following command, it will be copied to the terminal)
+The browser-based terminal you just brought up is a completely clean environment, so we'll need to install Towhee first: (click the following command, it will be copied into the terminal)
 
 First, install Towhee:
 
-<KatacodaBlock>pip install towhee==0.4.0rc1</KatacodaBlock>
+<KatacodaBlock>pip install towhee==0.4.0</KatacodaBlock>
 
 <!--First, download the source code from [Github](https://github.com/towhee-io/towhee): <KatacodaBlock>git clone https://github.com/towhee-io/towhee.git</KatacodaBlock>
 
@@ -30,12 +30,14 @@ Run the provided setup script: <KatacodaBlock>python3 setup.py install</Katacoda
 
 ### Some prep work
 
-Once that's done, let's get started with a bit of prep work. Download our Towhee logo (or any other image); we'll use this to generate an embedding vector:
+Once Towhee is installed, let's move onto a bit of prep work. Download our Towhee logo (or any other image); we'll use this to generate an embedding vector:
 
 <KatacodaBlock>
   wget
   https://github.com/towhee-io/towhee-docs/raw/main/docs/get-started/towhee.jpeg
 </KatacodaBlock>
+
+We can skip this step if we want to use url to find the image, Towhee support both ways.
 
 ### Running your first pipeline
 
@@ -43,7 +45,7 @@ Now it's time to generate your first embedding with Towhee! Open up a `python` t
 
 <KatacodaBlock>python3</KatacodaBlock>
 
-Data transformations are central to Towhee; Pipelines are simply a series of transformations connected together in a directed acyclic graph. All pre-built Towhee pipelines are given names that are representative of the task at hand. To create a pipeline, import the `pipeline` function from the `towhee`:
+Data transformations are central to Towhee; Pipelines are simply a series of transformations connected together in a directed acyclic graph. All pre-built Towhee pipelines are given names that are representative of the task at hand. To create a pipeline, import the `pipeline` function from `towhee`:
 
 <KatacodaBlock>from towhee import pipeline</KatacodaBlock>
 
@@ -51,9 +53,15 @@ Now let's instantiate an image embedding pipeline:
 
 <KatacodaBlock>embedding_pipeline = pipeline('image-embedding')</KatacodaBlock>
 
-And then pass the image we just downloaded through the pipeline:
+Towhee allow users to specify the image both by local directory and remote url.
+
+If we have downloaded the Towhee logo in the previous prep step:
 
 <KatacodaBlock>output = embedding_pipeline('towhee.jpeg')</KatacodaBlock>
+
+Or we can just use the url:
+
+<KatacodaBlock>output = embedding_pipeline('https://github.com/towhee-io/towhee-docs/raw/main/docs/get-started/towhee.jpeg')</KatacodaBlock>
 
 That's it! The embedding vector for the corresponding input image (`towhee.jpeg`) is stored in the `output` variable:
 
@@ -61,7 +69,7 @@ That's it! The embedding vector for the corresponding input image (`towhee.jpeg`
 
 ### Other pipelines
 
-Note that the default model used by `image-embedding` is `Resnet50` (you can find the corresponding mapping for default pipelines [here](https://github.com/towhee-io/towhee/blob/main/towhee/__init__.py#L25)). The default repository for this pipeline is located on the [Towhee hub](https://hub.towhee.io/towhee/image-embedding-resnet50); following the link will take you to a README page describing the pipeline, the model(s) used, and a simple diagram explaining how data flows through the pipeline.
+Note that the default model used by `image-embedding` is `Resnet50` (you can find the corresponding mapping for default pipelines [here](https://github.com/towhee-io/towhee/blob/main/towhee/__init__.py#L25)). The default repository for this pipeline is located on the [Towhee hub](https://towhee.io/towhee/image-embedding-resnet50); following the link will take you to a README page describing the pipeline, the model(s) used, and a simple diagram explaining how data flows through the pipeline.
 
 We can also try a different image embedding pipeline instead of the default one. Towhee provides a way to directly call a pipeline repository on the Towhee hub:
 
@@ -71,10 +79,10 @@ We can also try a different image embedding pipeline instead of the default one.
 
 This automatically loads the pipeline located at `towhee/image-embedding-resnet101` on the Towhee hub.
 
-Once you're finished, be sure to quit out:
+Once you're finished, be sure to quit out of the enviroment using:
 
 <KatacodaBlock>quit()</KatacodaBlock>
 
 ### Try more pipelines
 
-A summary of image embedding pipelines can be found at [here](pipelines/image-embedding). In addition, it is highly-recommended to browse the [hub](https://hub.towhee.io/pipelines) for more interesting pipelines.
+A summary of our image embedding pipelines can be found [here](../pipelines/image-embedding). In addition, we recommend that you browse the [hub](https://towhee.io/pipelines) to find more interesting pipelines.

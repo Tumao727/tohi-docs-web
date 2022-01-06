@@ -5,11 +5,11 @@ title: Installation
 
 ### Installation requirements
 
-Towhee has been tested with Python 3.6+ on macOS 10, macOS 11 (Intel CPU only), Ubuntu 18.04, Ubuntu 20.04, and Windows 10. Each individual operator may have its own specific requirements for Pytorch and Tensorflow, but in general Pytorch 1.2+ and Tensorflow 2.0+ will work for the majority of model-based operators.
+Towhee has been tested with Python 3.6+ on macOS 10, macOS 11 (Intel CPU only), Ubuntu 18.04, Ubuntu 20.04, and Windows 10. Each individual operator may have its own specific requirements for Pytorch and Tensorflow, but in general, Pytorch 1.2+ and Tensorflow 2.0+ should work for the majority of model-based operators.
 
-### Install Towhee with conda
+### Installing Towhee with Conda
 
-If you're a conda user, you can install Towhee as follows:
+If you're a conda user, you can install Towhee with the following lines:
 
 ```shell
 $ conda create -n towhee_env python=3.6  # create a conda environment for Towhee
@@ -25,7 +25,7 @@ As with `conda`, we highly recommend first activating a [virtual environment](ht
 $ python3 -m venv towhee_env  # create a virtual environment
 $ source towhee_env/bin/activate  # activate your newly created virtual environment
 $ pip install -U pip  # we recommend updating pip first before installing Towhee
-$ pip install towhee==0.4.0rc1  # install Towhee
+$ pip install towhee==0.4.0  # install Towhee
 ```
 
 Alternatively, if you are on Windows, install Python 3.6+ first, either through the Windows Store or through one of the [official releases](https://www.python.org/downloads/windows). You can then install Towhee as follows:
@@ -33,7 +33,7 @@ Alternatively, if you are on Windows, install Python 3.6+ first, either through 
 ```console
 c:\> python -m venv towhee_env
 c:\> source towhee_env/Scripts/Activate
-c:\> pip install towhee==0.4.0rc1
+c:\> pip install towhee==0.4.0
 ```
 
 ### Install Towhee from source
@@ -45,10 +45,12 @@ $ python3 -m venv towhee_env
 $ source towhee_env/bin/activate
 ```
 
+After activating the virtual enviroment, run the following commands to install Towhee.
+
 ```shell
 $ git clone https://github.com/towhee-io/towhee.git
 $ cd towhee
 $ python setup.py install
 ```
 
-Please note that the `main` branch is still being tested and may still have residual bugs and/or unimplemented features. We can always use a helping hand; if you encounter any issues, please [let us know](https://github.com/towhee-io/towhee/issues/new/choose) on Github. Contributions are always welcome!
+Please note that the `main` branch is still being tested and may have residual bugs and/or unimplemented features. We can always use a helping hand; if you encounter any issues, please [let us know](https://github.com/towhee-io/towhee/issues/new/choose) on Github. Contributions are always welcome!
