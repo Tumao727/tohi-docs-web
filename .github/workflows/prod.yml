@@ -36,5 +36,5 @@ jobs:
       - name: Build and push image to Harbor
         id: build-image
         run: |
-          docker build -t tumao/towhee-docs-web:${{ steps.generate-tag-name.outputs.docker_tag }}
+          docker build -t tumao/towhee-docs-web:${{ steps.generate-tag-name.outputs.docker_tag }} .
           docker push tumao/towhee-docs-web:${{ steps.generate-tag-name.outputs.docker_tag }}
